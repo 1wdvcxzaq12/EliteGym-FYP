@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Mirrored from code-theme.com/html/findhouses/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Apr 2021 11:05:13 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="">
+    <title>Find Houses - HTML5 Template</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body class="inner-pages hd-white">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- START SECTION HEADINGS -->
+        <!-- Header Container
+        ================================================== -->
+       <app-header-before-login></app-header-before-login>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <section class="headings">
+            <div class="text-heading text-center">
+                <div class="container">
+                    <h1>Welcome To Elite Muscles</h1>
+                    <h2>Join Elite Muscles for all your fitness gains</h2>
+                    <div class="row m-b-50">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input ngx-google-places-autocomplete id="location" [options]="mapOptions" #placesRef="ngx-places" (onAddressChange)="locationChangeEvent($event)" type="text" class="form-control" placeholder="Find your nearest gym">
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" [disabled] = "!citySearch" (click)="searchByCity()">Find Gym</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" style="text-align: left;">
+                            <span class="input-group-btn"><button type="button" class="btn btn-primary" (click)="setCurrentLocation()">Near by</button></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-title ml-3">
+                    <h3>Latest</h3>
+                    <h2>Articles</h2>
+                </div>
+                <div class="news-wrap">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div class="news-item news-item-sm">
+                                <a href="javascript:void(0);" class="news-img-link">
+                                    <div class="news-item-img">
+                                        <img class="resp-img" src="https://images.pexels.com/photos/1092878/pexels-photo-1092878.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog image">
+                                    </div>
+                                </a>
+                                <div class="news-item-text">
+                                    <a href="javascript:void(0);"><h3>Latest News on Gym’s Reopening</h3></a>
+                                    <div class="dates">
+                                        <span class="date">April 11, 2021 &nbsp;</span>
+                                    </div>
+                                    <div class="news-item-descr">
+                                        <p>As it stands gyms have been set to reopen 5th of April, with this amazing news check out our new gym tool, used to track the closest gyms within your Area. We can wait for you to get back into the gym and use the latest techniques we have provided and reach your goals….</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="news-item news-item-sm">
+                                <a  href="javascript:void(0);" class="news-img-link">
+                                    <div class="news-item-img">
+                                        <img class="resp-img" src="https://images.pexels.com/photos/1092877/pexels-photo-1092877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="blog image">
+                                    </div>
+                                </a>
+                                <div class="news-item-text">
+                                    <a  href="javascript:void(0);"><h3>Weightlifter Sets New world Record</h3></a>
+                                    <div class="dates">
+                                        <span class="date">April 11, 2020 &nbsp;</span>
+                                    </div>
+                                    <div class="news-item-descr">
+                                        <p>Check out Jack Oaks who set new deadlift world record in January, lifting a whopping 550 pounds, this event was large and pre recorded can be found on YouTube. This young adult aged 24 set the record with only 4 years’ experience…</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="news-item news-item-sm">
+                                <a  href="javascript:void(0);" class="news-img-link">
+                                    <div class="news-item-img">
+                                        <img class="resp-img" src="https://images.pexels.com/photos/2780762/pexels-photo-2780762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="blog image">
+                                    </div>
+                                </a>
+                                <div class="news-item-text">
+                                    <a  href="javascript:void(0);"><h3>New Training technique called HIIT</h3></a>
+                                    <div class="dates">
+                                        <span class="date">April 11, 2020 &nbsp;/</span>
+                                    </div>
+                                    <div class="news-item-descr">
+                                        <p>HIIT has recently become a trending training method proving real results in the social media industry. There are several tutorials on how to do this method properly located within YouTube, we are looking forward to adding a new HIIT programme in the near future….</p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- START FOOTER -->
+        <footer class="first-footer">
+            <div class="second-footer">
+                <div class="container">
+                    <p>2021 ©</p>
+                </div>
+            </div>
+        </footer>
+
+        <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+        <!-- END FOOTER -->
+
+        <!--register form -->
+        <div class="login-and-register-form modal">
+            <div class="main-overlay"></div>
+            <div class="main-register-holder">
+                <div class="main-register fl-wrap">
+                    <div class="close-reg"><i class="fa fa-times"></i></div>
+                    <h3>Welcome to <span>Find<strong>Houses</strong></span></h3>
+                    <div class="soc-log fl-wrap">
+                        <p>Login</p>
+                    </div>
+                    <div class="log-separator fl-wrap"><span>Or</span></div>
+                    <div id="tabs-container">
+                        <ul class="tabs-menu">
+                            <li class="current"><a href="#tab-1">Login</a></li>
+                            <li><a href="#tab-2">Register</a></li>
+                        </ul>
+                        <div class="tab">
+                            <div id="tab-1" class="tab-contents">
+                                <div class="custom-form">
+                                    <form method="post" name="registerform">
+                                        <label>Username or Email Address * </label>
+                                        <input name="email" type="text" onClick="this.select()" value="">
+                                        <label>Password * </label>
+                                        <input name="password" type="password" onClick="this.select()" value="">
+                                        <button type="submit" class="log-submit-btn"><span>Log In</span></button>
+                                        <div class="clearfix"></div>
+                                        <div class="filter-tags">
+                                            <input id="check-a" type="checkbox" name="check">
+                                            <label for="check-a">Remember me</label>
+                                        </div>
+                                    </form>
+                                    <div class="lost_password">
+                                        <a href="#">Lost Your Password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab">
+                                <div id="tab-2" class="tab-contents">
+                                    <div class="custom-form">
+                                        <form method="post" name="registerform" class="main-register-form" id="main-register-form2">
+                                            <label>First Name * </label>
+                                            <input name="name" type="text" onClick="this.select()" value="">
+                                            <label>Second Name *</label>
+                                            <input name="name2" type="text" onClick="this.select()" value="">
+                                            <label>Email Address *</label>
+                                            <input name="email" type="text" onClick="this.select()" value="">
+                                            <label>Password *</label>
+                                            <input name="password" type="password" onClick="this.select()" value="">
+                                            <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--register form end -->
+
+        <!-- START PRELOADER -->
+        <div id="preloader">
+            <div id="status">
+                <div class="status-mes"></div>
+            </div>
+        </div>
+        <!-- END PRELOADER -->
+    </div>
+</body>
+</html>

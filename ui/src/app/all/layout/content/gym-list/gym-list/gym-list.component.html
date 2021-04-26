@@ -1,0 +1,151 @@
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- START SECTION HEADINGS -->
+    <!-- Header Container
+        ================================================== -->
+        <app-header-before-login></app-header-before-login>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+    <div class="header-map google-maps properties" *ngIf="(getStoreListDone && !getStoreListDone.closed) || (gymListResponseDataInterface && gymListResponseDataInterface.data.length > 0)">
+        <div #gmap class="map" id="main-map" style="height: 450px; width: 100%;"></div>
+    </div>
+    <!-- END SECTION HEADINGS -->
+
+    <!-- START SECTION PROPERTIES LISTING -->
+    <section class="properties-list featured portfolio blog">
+        <div class="container">
+            <section class="headings-2 pt-0 pb-0">
+                <div class="pro-wrapper">
+                    <div class="detail-wrapper-body">
+                        <div class="listing-title-bar">
+                            <div class="text-heading text-left">
+                                <p><a href="javascript:void(0);">Home </a> &nbsp;/&nbsp; <span>Listings</span></p>
+                            </div>
+                            <!-- <h3 #storeListTop>Grid View</h3> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Search Form -->
+            <!--/ End Search Form -->
+            <ng-template [ngIf]="gymListResponseDataInterface && gymListResponseDataInterface.data.length > 0">
+                <div class="row" style="margin-top: 20px;;" *ngFor="let gymResponse of gymListResponseDataInterface.data | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage };index as i">
+                    <div class="item col-xl-5 col-lg-12 col-md-12 col-xs-12 landscapes sale pr-0 pb-0">
+                        <div class="project-single mb-0 bb-0 ps-1">
+                            <div class="project-inner project-head">
+                                <div class="homes">
+                                    <!-- homes img -->
+                                    <a href="javascript:;" routerLink="/{{ROUTS.GYM_DETAIL}}{{gymResponse.id}}" class="homes-img">
+                                        <img *ngIf="gymResponse.imagePath" src="{{URL.GET_IMAGE}}{{gymResponse.imagePath}}" style="height: 234.83px;" alt="home-1" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="button-effect">
+                                    <!-- <a href="single-property-1.html" class="btn"><i class="fa fa-link"></i></a> -->
+                                    <a href="https://www.youtube.com/watch?v=14semTlwyUY" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
+                                    <!-- <a href="single-property-2.html" class="img-poppu btn"><i class="fa fa-photo"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-md-12 homes-content pb-0 mb-44" style="padding-bottom: 0px !important;">
+                        <!-- homes address -->
+                        <h3><a href="javascript:;" routerLink="/{{ROUTS.GYM_DETAIL}}{{gymResponse.id}}">{{ gymResponse.name }}</a></h3>
+                        <p class="homes-address mb-3">
+                            <a href="javascript:;" routerLink="/{{ROUTS.GYM_DETAIL}}{{gymResponse.id}}">
+                                <i class="fa fa-map-marker"></i><span>{{ gymResponse.address }}</span>
+                            </a>
+                        </p>
+                        <!-- homes List -->
+                        <ul class="homes-list clearfix" style="min-height: 93px;">
+                            <li style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;" [innerHTML]="gymResponse.description">
+                            </li>
+                        </ul>
+                        <div class="footer" >
+                            <p>{{ gymResponse.facilities }}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <!-- pagination start -->
+            <div style="margin-top: 50px;" class="clearfix" *ngIf="gymListResponseDataInterface && gymListResponseDataInterface.data.length > itemsPerPage">
+                <pagination-controls style="text-align: center;" (pageChange)="currentPage = $event"></pagination-controls>
+            </div>
+            <!-- pagination end -->
+        </div>
+    </section>
+    <!-- END SECTION PROPERTIES LISTING -->
+
+    <!-- START FOOTER -->
+    <footer class="first-footer">
+        <div class="second-footer">
+            <div class="container">
+                <p>2021 ©</p>
+            </div>
+        </div>
+    </footer>
+
+    <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+    <!-- END FOOTER -->
+
+    <!--register form -->
+    <div class="login-and-register-form modal">
+        <div class="main-overlay"></div>
+        <div class="main-register-holder">
+            <div class="main-register fl-wrap">
+                <div class="close-reg"><i class="fa fa-times"></i></div>
+                <h3>Welcome to <span>Find<strong>Houses</strong></span></h3>
+                <div class="soc-log fl-wrap">
+                    <p>Login</p>
+                </div>
+                <div class="log-separator fl-wrap"><span>Or</span></div>
+                <div id="tabs-container">
+                    <ul class="tabs-menu">
+                        <li class="current"><a href="#tab-1">Login</a></li>
+                        <li><a href="#tab-2">Register</a></li>
+                    </ul>
+                    <div class="tab">
+                        <div id="tab-1" class="tab-contents">
+                            <div class="custom-form">
+                                <form method="post" name="registerform">
+                                    <label>Username or Email Address * </label>
+                                    <input name="email" type="text" onClick="this.select()" value="">
+                                    <label>Password * </label>
+                                    <input name="password" type="password" onClick="this.select()" value="">
+                                    <button type="submit" class="log-submit-btn"><span>Log In</span></button>
+                                    <div class="clearfix"></div>
+                                    <div class="filter-tags">
+                                        <input id="check-a" type="checkbox" name="check">
+                                        <label for="check-a">Remember me</label>
+                                    </div>
+                                </form>
+                                <div class="lost_password">
+                                    <a href="#">Lost Your Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <div id="tab-2" class="tab-contents">
+                                <div class="custom-form">
+                                    <form method="post" name="registerform" class="main-register-form" id="main-register-form2">
+                                        <label>First Name * </label>
+                                        <input name="name" type="text" onClick="this.select()" value="">
+                                        <label>Second Name *</label>
+                                        <input name="name2" type="text" onClick="this.select()" value="">
+                                        <label>Email Address *</label>
+                                        <input name="email" type="text" onClick="this.select()" value="">
+                                        <label>Password *</label>
+                                        <input name="password" type="password" onClick="this.select()" value="">
+                                        <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--register form end -->
+
+</div>
+<!-- Wrapper / End -->
