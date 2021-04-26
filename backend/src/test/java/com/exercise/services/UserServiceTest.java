@@ -25,15 +25,18 @@ public class UserServiceTest {
 	@Autowired
 	private UserRepository userRepository;
 	
+	/**
+	 * Save user
+	 */
 	@Test
 	public void shoudCheckUserSave() {
-		User exist = userRepository.findByEmail("benfoster231@gmail.com");
+		User exist = userRepository.findByEmail("ziadash28@gmail.com");
 		if(exist == null) {
 			User user = new User();
-			user.setEmail("benfoster231@gmail.com");
+			user.setEmail("ziadash28@gmail.com");
 			user.setRole(Role.ROLE_USER);
-			user.setName("benfoster");
-			user.setPassword(bcryptEncoder.encode("Ben12345"));
+			user.setName("ziad");
+			user.setPassword(bcryptEncoder.encode("ziad123"));
 			
 			userRepository.save(user);
 			System.out.println("Save user");
@@ -44,9 +47,12 @@ public class UserServiceTest {
 		}
 	}
 	
+	/**
+	 * Find user by email id.
+	 */
 	@Test
 	public void findUserByEmail() {
-		User user = userRepository.findByEmail("benfoster231@gmail.com");
+		User user = userRepository.findByEmail("ziadash28@gmail.com");
 		Assert.assertNotNull(user);
 	}
 	

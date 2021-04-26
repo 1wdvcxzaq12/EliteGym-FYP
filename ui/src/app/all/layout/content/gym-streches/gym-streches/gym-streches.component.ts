@@ -31,7 +31,7 @@ export class GymStrechesComponent implements OnInit {
 
     this.httpRepository.loadStrechesData().subscribe(res => {
 
-      //TODO : url mathi aa parameter levano 6 j ama pass karvano
+   
       let strechName = this.bodypart;
       this.strechData = res[this.gender][this.type][strechName];
     }, err => { 
