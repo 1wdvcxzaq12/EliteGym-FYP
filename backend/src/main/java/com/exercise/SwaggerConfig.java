@@ -31,7 +31,7 @@ public class SwaggerConfig {
 	            "Exercise Rest APIs",
 	            "1.0",
 	            "",
-	            new Contact("name","website","email"),
+	            new Contact("Ziad","Testing","ziadas28@gmail.com"),
 	            "",
 	            "",
 	            Collections.emptyList()
