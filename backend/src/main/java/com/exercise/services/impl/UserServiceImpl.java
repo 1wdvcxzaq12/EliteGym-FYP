@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService{
 		calculationHistoryRepository.save(calculationHistory);
 		
 		
-		return ResponseGenerator.generateResponse(new Response("signup.successfully",calculationHistory),HttpStatus.OK);
+		return ResponseGenerator.generateResponse(new Response("history.save.successfully",calculationHistory),HttpStatus.OK);
 	}
 
 	@Override
@@ -121,6 +121,6 @@ public class UserServiceImpl implements UserService{
 		} else {
 			calculationHistory = calculationHistoryRepository.findByUserAndCalculation(user, calculation);
 		}
-		return ResponseGenerator.generateResponse(new Response("signup.successfully",calculationHistory),HttpStatus.OK);
+		return ResponseGenerator.generateResponse(new Response("history.get.successfully",calculationHistory),HttpStatus.OK);
 	}
 }
